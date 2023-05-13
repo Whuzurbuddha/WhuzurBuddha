@@ -1,16 +1,8 @@
 <h2 align="center">Hi 👋! My name is Alexander, I am just here to learn, trying to get a developer.</h2>
-<style>
-  body{
-    background-color: black;
-  }
-  .image-border {
-    border: 2px solid grey;
-    border-radius: 100px;
-  }
-</style>
+
 <div class="body">
   <div align="center">
-    <img  height="150" src="https://avatars.githubusercontent.com/u/116446513?s=400&u=6af6a91c20b5974fc55dbfc7652bff4d20f87da0&v=4" class="image-border"/>
+    <img  height="150" src="https://avatars.githubusercontent.com/u/116446513?s=400&u=6af6a91c20b5974fc55dbfc7652bff4d20f87da0&v=4" style="border: 2px solid red; border-radius: 100px"/>
   </div>
   <br>
   <br>
