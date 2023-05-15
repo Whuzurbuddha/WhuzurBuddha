@@ -25,10 +25,8 @@
 ###
 
 <br clear="both">
-
-
    ![Snake animation](https://github.com/whuzurbuddha/whuzurbuddha/blob/output/github-contribution-grid-snake.svg)
-<button>KNOPP</button>
+
 
 ###
 
