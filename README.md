@@ -1,10 +1,5 @@
 <h2 align="center">Hi 👋! My name is Alexander<br><br>I'm just here to learn and hopefully to become developer one day</h2>
 
-###
-
-<div align="center">
-    <img height="150" src="https://avatars.githubusercontent.com/u/116446513?v=4"  />
-</div>
 
 ###
 
