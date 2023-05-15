@@ -4,6 +4,10 @@ on:
   schedule: # execute every 12 hours
     - cron: "* */12 * * *"
   workflow_dispatch:
+  inputs:
+      parameter:
+        description: 
+  pull_request:
 
 jobs:
   build:
