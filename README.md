@@ -6,15 +6,6 @@
 
 <br clear="both">
 
-
-###
-
-<div align="center">
-    <img src="https://github-readme-stats.vercel.app/api?username=whuzurbuddha&show_icons=true&theme=transparent" height="150" alt="languages graph"/>
-    
-
-</div>
-
 ###
 
 <br clear="both">
