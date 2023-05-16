@@ -7,7 +7,7 @@
 <br clear="both">
 
 
-
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=whuzurbuddha&show_icons=true&theme=transparent)
 
 
 
