@@ -20,9 +20,6 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=whuzurbuddha&repo=whuzurbuddha&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=radical&hide_border=false" height="150" alt="languages graph"  />
 </div>
 
-
-[![Harlok's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=whuzurbuddha&)](https://github.com/anuraghazra/github-readme-stats)
-
 ###
 
 <br clear="both">
