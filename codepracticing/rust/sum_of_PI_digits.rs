@@ -6,7 +6,7 @@ use std::io;
 
 fn compute_pi(index: i32) -> Result<String, String> {
 
-    let mut vec: Vec<f64> = Vec::new();
+    let mut upi: f64 = 0.0;
     for index in 1..index + 1 {
         let c = index.to_string();
         let n = match c.trim().parse::<f64>() {
@@ -16,9 +16,9 @@ fn compute_pi(index: i32) -> Result<String, String> {
             }
         };
         let f = 1.0/n.powf(2.0);
-        vec.push(f);
+        upi += f;
     }
-    let upi: f64 = vec.iter().sum();
+    //let upi: f64 = vec.iter().sum();
     let pi = (upi * 6.0).sqrt();
     let binding = pi.to_string();
     Ok(binding)
