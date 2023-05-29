@@ -9,7 +9,7 @@ from PIL import Image, ImageTk
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("simple map")
+        self.title("German states")
         self.geometry("820x1000")
         self.resizable(False, False)
         self.set_background_image("img/background.png")
