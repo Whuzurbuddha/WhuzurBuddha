@@ -16,6 +16,7 @@ class App(tk.Tk):
 
         self.fig = Figure(figsize=(6, 8), dpi=100)
         self.fig.set_facecolor('darkgray')
+        self.fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
         self.ax = self.fig.add_subplot(111)
 
         self.canvas = FigureCanvasTkAgg(self.fig, master=self)
@@ -72,7 +73,7 @@ class App(tk.Tk):
         return lon, lat, xLabel, yLabel
 
     def load_map(self):
-        self.ax.clear()  # Achse löschen, bevor ein neues Diagramm gezeichnet wird
+        self.ax.clear() 
 
         map_data = self.drawing_map()
         lon = map_data[0]
@@ -88,7 +89,7 @@ class App(tk.Tk):
         subprocess.run(["python3", "main.py"])
 
     def update_plot(self):
-        self.ax.clear()  # Achse löschen, bevor ein neues Diagramm gezeichnet wird
+        self.ax.clear() 
 
         map_data = self.drawing_map()
         lat = map_data[0]
