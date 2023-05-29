@@ -25,13 +25,22 @@ class App(tk.Tk):
         xLabel = map_data[2]
         yLabel = map_data[3]
         state_coordinates = self.states()
+        color = ["brown", "green", "purple", "blue", "red", "darkgray", "magenta",
+                 "maroon", "lime", "firebrick", "violet", "crimson", "chocolate", "darkgoldenrod", "navy", "sienna", ]
+        color_index = -1
+
         for state, coordinates in state_coordinates.items():
+            color_index += 1
             lat = [coord[0] for coord in coordinates]
             lon = [coord[1] for coord in coordinates]
-            self.ax.plot(lon, lat, marker='.', linestyle='None', markersize=20)
+            avg_lat = sum(lat) / len(lat)
+            avg_lon = sum(lon) / len(lon)
 
-        self.ax.set_xlabel(xLabel)
-        self.ax.set_ylabel(yLabel)
+            self.ax.plot(lon, lat, color=color[color_index], marker='.', linestyle='None', markersize=20)
+            self.ax.annotate(f"{state}", xy=(avg_lon, avg_lat), xytext=(avg_lon, 0),
+                             textcoords="offset points", ha='center', fontsize=8,
+                             bbox=dict(boxstyle="round", fc="w", ec="gray"))
+
         self.canvas = FigureCanvasTkAgg(self.fig, master=self)
         self.canvas.draw()
         self.canvas.get_tk_widget().grid(column=0, row=0)
