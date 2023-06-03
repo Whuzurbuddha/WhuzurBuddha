@@ -6,59 +6,24 @@
 #include "../include/interfaces.h"
 
 
-void generateRouting() {
-    std::string output = routing_table();
-    std::ofstream outputFile("output/outrouting.txt", std::ofstream::trunc);
-    if (outputFile.is_open()) {
-        outputFile << output << std::endl;
-        outputFile.close();
-    } else {
-        std::cerr << "Failed to open output file." << std::endl;
-    }
-}
-
-void generateInterfaces() {
-    std::string output = interfaces();
-    std::ofstream outputFile("output/interout.txt", std::ofstream::trunc);
-    if (outputFile.is_open()) {
-        outputFile << output << std::endl;
-        outputFile.close();
-    } else {
-        std::cerr << "Failed to open output file." << std::endl;
-    }
-}
-
-void generateConnectionServer() {
-    std::vector<std::string> out = active_connections();
-    std::ofstream outputFile("output/acs.txt", std::ofstream::trunc);
-    if (outputFile.is_open()) {
-        for(const auto & i : out){
-            outputFile << i;
+void generateContent() {
+    std::vector<std::string> functions = {"routing_table()", "interfaces()", "active_connections()", "active_conn_without_server()"};
+    std::vector<std::string> output_files = {"outrouting.txt", "interout.txt", "acs.txt", "acws.txt"};
+    for(int i = 0; i < functions.size(); ++i){
+        std::string output = functions[i];
+        std::ofstream outputFile("/NETstetGUI/output/" + output_files[i], std::ofstream::trunc);
+        if (outputFile.is_open()) {
+            outputFile << output << std::endl;
+            outputFile.close();
+        } else {
+            std::cerr << "Failed to open output file." << std::endl;
         }
-        outputFile.close();
-    } else {
-        std::cerr << "Failed to open output file." << std::endl;
-    }
-}
-
-void generateConnWServer() {
-    std::vector<std::string> out = active_conn_without_server();
-    std::ofstream outputFile("output/acws.txt", std::ofstream::trunc);
-    if (outputFile.is_open()) {
-        for(const auto & i : out){
-            outputFile << i;
-        }
-        outputFile.close();
-    } else {
-        std::cerr << "Failed to open output file." << std::endl;
     }
 }
 
 int main() {
-    generateRouting();
-    generateInterfaces();
-    generateConnectionServer();
-    generateConnWServer();
+    generateContent();
     return 0;
 }
+
 
