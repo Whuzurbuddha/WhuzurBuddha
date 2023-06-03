@@ -33,44 +33,11 @@ def start():
     text.insert(tk.END, "\n\n\n\n")
 
 
-def dispRouting():
+def dispContent(file: str):
     clear_text()
     text.insert(tk.END, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
     try:
-        with open("/home/alexander/CLionProjects/NETstetGUI/output/outrouting.txt", "r") as file:
-            output = file.read()
-            center_text(text, output)
-    except FileNotFoundError:
-        text.insert(tk.END, "Output file not found.")
-
-
-def dispInterfaces():
-    clear_text()
-    text.insert(tk.END, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-    try:
-        with open("/home/alexander/CLionProjects/NETstetGUI/output/interout.txt", "r") as file:
-            output = file.read()
-            center_text(text, output)
-    except FileNotFoundError:
-        text.insert(tk.END, "Output file not found.")
-
-
-def dispConnectServer():
-    clear_text()
-    text.insert(tk.END, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-    try:
-        with open("/home/alexander/CLionProjects/NETstetGUI/output/acs.txt", "r") as file:
-            output = file.read()
-            center_text(text, output)
-    except FileNotFoundError:
-        text.insert(tk.END, "Output file not found.")
-
-
-def dispConnectWServer():
-    clear_text()
-    text.insert(tk.END, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-    try:
-        with open("/home/alexander/CLionProjects/NETstetGUI/output/acws.txt", "r") as file:
+        with open(f"/NETstetGUI/output/{file}", "r") as file:
             output = file.read()
             center_text(text, output)
     except FileNotFoundError:
@@ -81,6 +48,15 @@ def clear_text():
     text.configure(state='normal')
     text.delete("1.0", tk.END)
     text.configure(state='disabled')
+
+def delete_content():
+    content_files = ["acs.txt", "acws.txt", "interout.txt", "outrouting.txt" ]
+    for i in range(0, 4):
+        try:
+            with open(f"/NETstetGUI/output/{content_files[i]}", "w") as file:
+                file.write(" ")
+        except FileNotFoundError:
+            text.insert(tk.END, "Output file not found.")
 
 
 def execute_main():
@@ -98,19 +74,20 @@ root.geometry("1400x900")
 text = tk.Text(root, fg="yellow", bg="black")
 text.pack(fill=tk.BOTH, expand=True)
 
-button = tk.Button(root, text="Routing table", command=lambda: [execute_main() ,dispRouting()])
+button = tk.Button(root, text="Routing table", command=lambda: [execute_main(), dispContent("outrouting.txt")])
 button.pack(side=tk.LEFT)
 
-button = tk.Button(root, text="Interfaces", command=lambda:  [execute_main(), dispInterfaces()])
+button = tk.Button(root, text="Interfaces", command=lambda:  [execute_main(), dispContent("interout.txt")])
 button.pack(side=tk.LEFT)
 
 button = tk.Button(root, text="Connections (just Server)",
-                   command=lambda: [execute_main(), dispConnectServer()])
+                   command=lambda: [execute_main(), dispContent("acws.txt")])
 button.pack(side=tk.LEFT)
 
 button = tk.Button(root, text="Connections (without Server)",
-                   command=lambda:  [execute_main(), dispConnectWServer()])
+                   command=lambda:  [execute_main(), dispContent("acs.txt")])
 button.pack(side=tk.LEFT)
 
 start()
 root.mainloop()
+delete_content()
