@@ -37,7 +37,7 @@ def dispContent(file: str):
     clear_text()
     text.insert(tk.END, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
     try:
-        with open(f"/NETstetGUI/output/{file}", "r") as file:
+        with open(f"/home/alexander/CLionProjects/NETstetGUI/output/{file}", "r") as file:
             output = file.read()
             center_text(text, output)
     except FileNotFoundError:
@@ -53,7 +53,7 @@ def delete_content():
     content_files = ["acs.txt", "acws.txt", "interout.txt", "outrouting.txt" ]
     for i in range(0, 4):
         try:
-            with open(f"/NETstetGUI/output/{content_files[i]}", "w") as file:
+            with open(f"/home/alexander/CLionProjects/NETstetGUI/output/{content_files[i]}", "w") as file:
                 file.write(" ")
         except FileNotFoundError:
             text.insert(tk.END, "Output file not found.")
@@ -74,18 +74,18 @@ root.geometry("1400x900")
 text = tk.Text(root, fg="yellow", bg="black")
 text.pack(fill=tk.BOTH, expand=True)
 
-button = tk.Button(root, text="Routing table", command=lambda: [execute_main(), dispContent("outrouting.txt")])
+button = tk.Button(root, text="Routing table", command=lambda: [delete_content, execute_main(), dispContent("outrouting.txt")])
 button.pack(side=tk.LEFT)
 
-button = tk.Button(root, text="Interfaces", command=lambda:  [execute_main(), dispContent("interout.txt")])
+button = tk.Button(root, text="Interfaces", command=lambda:  [delete_content, execute_main(), dispContent("interout.txt")])
 button.pack(side=tk.LEFT)
 
 button = tk.Button(root, text="Connections (just Server)",
-                   command=lambda: [execute_main(), dispContent("acws.txt")])
+                   command=lambda: [delete_content, execute_main(), dispContent("acws.txt")])
 button.pack(side=tk.LEFT)
 
 button = tk.Button(root, text="Connections (without Server)",
-                   command=lambda:  [execute_main(), dispContent("acs.txt")])
+                   command=lambda:  [delete_content, execute_main(), dispContent("acs.txt")])
 button.pack(side=tk.LEFT)
 
 start()
