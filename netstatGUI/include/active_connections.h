@@ -10,7 +10,8 @@
 #include <sstream>
 #include <cstring>
 #include <csignal>
-std::vector<std::string> active_connections(){
+
+[[maybe_unused]] std::string active_connections(){
     const std::string& command = "netstat -l";
     FILE* pipe = popen(command.c_str(), "r");
     if (!pipe) {
@@ -19,14 +20,14 @@ std::vector<std::string> active_connections(){
     const char* targetLine = "Aktive Sockets in der UNIX-Domäne (Nur Server)";
     char buffer[256];
     bool print = true;
-    std::vector<std::string> out_vec;
+    std::string out_vec;
     while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
         if (std::strncmp(buffer, targetLine, std::strlen(targetLine)) == 0) {
             print = false;
         }
 
         if (print) {
-            out_vec.push_back(buffer);
+            out_vec.append(buffer);
             std::cout << buffer;
         }
     }
