@@ -13,6 +13,7 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 from show_audio_info import show_audio_info
 from show_gpu_info import show_gpu_info
+from show_cpu_info import show_cpu_info
 
 class Ui_Hardwarecomponents(object):
     def setupUi(self, Hardwarecomponents):
@@ -55,14 +56,15 @@ class Ui_Hardwarecomponents(object):
         self.storageButton.setText(QCoreApplication.translate("Hardwarecomponents", u"Storage", None))
 
     def show_audio_info(self):
-        audio_info = str(show_audio_info())
+        audio_info = str("Audio info:" + "\n" + show_audio_info())
         self.textBrowser.setText(audio_info)
 
     def show_cpu_info(self):
-        self.textBrowser.setText("CPU information goes here.")
+        cpu_info = str("CPU info:" + "\n" + show_cpu_info())
+        self.textBrowser.setText(cpu_info)
 
     def show_gpu_info(self):
-        gpu_info = str(show_gpu_info())
+        gpu_info = str("GPU info:" + "\n" + show_gpu_info())
         self.textBrowser.setText(gpu_info)
 
     def show_storage_info(self):
