@@ -56,15 +56,15 @@ class Ui_Hardwarecomponents(object):
         self.storageButton.setText(QCoreApplication.translate("Hardwarecomponents", u"Storage", None))
 
     def show_audio_info(self):
-        audio_info = str("Audio info:" + "\n" + show_audio_info())
+        audio_info = str("Audio info:" + "\n\n" + show_audio_info())
         self.textBrowser.setText(audio_info)
 
     def show_cpu_info(self):
-        cpu_info = str("CPU info:" + "\n" + show_cpu_info())
+        cpu_info = str("CPU info:" + "\n\n" + show_cpu_info())
         self.textBrowser.setText(cpu_info)
 
     def show_gpu_info(self):
-        gpu_info = str("GPU info:" + "\n" + show_gpu_info())
+        gpu_info = str("GPU info:" + "\n\n" + show_gpu_info())
         self.textBrowser.setText(gpu_info)
 
     def show_storage_info(self):
