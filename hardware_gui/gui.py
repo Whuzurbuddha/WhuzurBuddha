@@ -15,6 +15,7 @@ from show_audio_info import show_audio_info
 from show_gpu_info import show_gpu_info
 from show_cpu_info import show_cpu_info
 from show_storage_info import show_storage_info
+from show_memory_info import show_memory_info
 
 class Ui_Hardwarecomponents(object):
     def setupUi(self, Hardwarecomponents):
@@ -22,24 +23,33 @@ class Ui_Hardwarecomponents(object):
             Hardwarecomponents.setObjectName(u"Hardwarecomponents")
         Hardwarecomponents.resize(1342, 870)
         Hardwarecomponents.setAutoFillBackground(False)
+
         self.audioButton = QPushButton(Hardwarecomponents)
         self.audioButton.setObjectName(u"audioButton")
-        self.audioButton.setGeometry(QRect(0, 10, 127, 44))
-        self.audioButton.setCheckable(False)
+        self.audioButton.setGeometry(QRect(5, 10, 127, 44))
+
         self.cpuButton = QPushButton(Hardwarecomponents)
         self.cpuButton.setObjectName(u"cpuButton")
-        self.cpuButton.setGeometry(QRect(0, 60, 127, 44))
+        self.cpuButton.setGeometry(QRect(5, 60, 127, 44))
+
         self.gpuButton = QPushButton(Hardwarecomponents)
         self.gpuButton.setObjectName(u"gpuButton")
-        self.gpuButton.setGeometry(QRect(0, 110, 127, 44))
+        self.gpuButton.setGeometry(QRect(5, 110, 127, 44))
+
         self.textBrowser = QTextBrowser(Hardwarecomponents)
         self.textBrowser.setObjectName(u"textBrowser")
         self.textBrowser.setGeometry(QRect(140, 10, 1191, 851))
         self.textBrowser.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
         self.textBrowser.setAutoFormatting(QTextEdit.AutoAll)
+
         self.storageButton = QPushButton(Hardwarecomponents)
         self.storageButton.setObjectName(u"storageButton")
-        self.storageButton.setGeometry(QRect(0, 160, 127, 44))
+        self.storageButton.setGeometry(QRect(5, 160, 127, 44))
+
+        self.memoryButton = QPushButton(Hardwarecomponents)
+        self.memoryButton.setObjectName(u"memoryButton")
+        self.memoryButton.setGeometry(QRect(5, 210, 127, 44))
+
 
         self.retranslateUi(Hardwarecomponents)
 
@@ -48,6 +58,7 @@ class Ui_Hardwarecomponents(object):
         self.cpuButton.clicked.connect(self.show_cpu_info)
         self.gpuButton.clicked.connect(self.show_gpu_info)
         self.storageButton.clicked.connect(self.show_storage_info)
+        self.memoryButton.clicked.connect(self.show_memory_info)
 
     def retranslateUi(self, Hardwarecomponents):
         Hardwarecomponents.setWindowTitle(QCoreApplication.translate("Hardwarecomponents", u"Hardware components", None))
@@ -55,6 +66,7 @@ class Ui_Hardwarecomponents(object):
         self.cpuButton.setText(QCoreApplication.translate("Hardwarecomponents", u"CPU", None))
         self.gpuButton.setText(QCoreApplication.translate("Hardwarecomponents", u"GPU", None))
         self.storageButton.setText(QCoreApplication.translate("Hardwarecomponents", u"Storage", None))
+        self.memoryButton.setText(QCoreApplication.translate("Hardwarecomponents", u"Memory", None))
 
     def show_audio_info(self):
         audio_info = str("Audio info:" + "\n\n" + show_audio_info())
@@ -71,6 +83,10 @@ class Ui_Hardwarecomponents(object):
     def show_storage_info(self):
         storage_info = str("Storage info:" + "\n\n" + show_storage_info()) 
         self.textBrowser.setText(storage_info)
+
+    def show_memory_info(self):
+        memory_info = str("Memory info: " + "\n\n" + show_memory_info())
+        self.textBrowser.setText(memory_info)
 
 
 if __name__ == "__main__":
