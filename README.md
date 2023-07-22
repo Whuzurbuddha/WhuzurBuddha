@@ -25,19 +25,9 @@
 
 ###
 
-  ![Snake animation](https://github.com/whuzurbuddha/whuzurbuddha/blob/output/github-contribution-grid-snake.svg)
+    ![Snake animation](https://github.com/whuzurbuddha/whuzurbuddha/blob/output/github-contribution-grid-snake.svg)
 
 ###
-
-  ![Metrics](/github-metrics.svg)
-
-###
-
-
-<picture>
-  <img src="/github-metrics.svg" alt="Metrics">
-</picture>
-
 
 
 <div align="right">
