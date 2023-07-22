@@ -1,0 +1,7 @@
+1. create database
+
+2. Assign the user right to your database
+   CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+   GRANT SELECT, INSERT, UPDATE, DELETE ON datenbankname.* TO 'user'@'localhost';
+
+3. make api run in background (nohup python3 request.py &)
