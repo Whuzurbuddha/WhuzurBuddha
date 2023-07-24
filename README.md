@@ -25,7 +25,7 @@
 
 ###
 
-![Snake animation](https://github.com/whuzurbuddha/whuzurbuddha/blob/output/github-contribution-grid-snake.svg)
+![snake animation](https://github.com/whuzurbuddha/whuzurbuddha/blob/output/github-contribution-grid-snake2.svg)
 
 ###
 
