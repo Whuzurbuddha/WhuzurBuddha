@@ -4,4 +4,6 @@
    CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
    GRANT SELECT, INSERT, UPDATE, DELETE ON datenbankname.* TO 'user'@'localhost';
 
-3. make api run in background (nohup python3 request.py &)
+3. pip install flask passlib pymysql 
+
+4. make api run in background (nohup python3 request.py &)
