@@ -84,5 +84,5 @@ app.post('/addUser', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server läuft auf http://192.168.178.29:${port}`);
+    console.log(`Server runs on http://ServerIP:${port}`);
 });
