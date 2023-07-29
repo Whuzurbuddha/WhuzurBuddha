@@ -29,8 +29,8 @@ def http_ping():
 def insert_data(addresses):
     db = pymysql.connect(
         host='127.0.0.1',
-        user='alexander',
-        password='',
+        user='YOURUSERNAME',
+        password='****',
         db='crawling'
     )
 
