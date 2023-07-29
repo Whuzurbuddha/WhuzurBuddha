@@ -1,51 +1,64 @@
 import requests
-import time
 from bs4 import BeautifulSoup
+import pymysql
 
-start_ip = (192, 0, 0, 0)
-end_ip = (193, 254, 254, 254)
 
-for a in range(start_ip[0], end_ip[0] + 1):
-    for b in range(start_ip[1], end_ip[1] + 1):
-        for c in range(start_ip[2], end_ip[2] + 1):
-            for d in range(start_ip[3], end_ip[3] + 1):
-                ip_address = f"{a}.{b}.{c}.{d}"
-                url = f"http://{ip_address}"
+def getWebsiteContent():
+    db = pymysql.connect(
+        host='127.0.0.1',
+        user='YOURUSERNAME',
+        password='****',
+        db='crawling'
+    )
+    try:
+        with db.cursor() as cursor:
+            sql = "select * from reachable_IPs;"
+            cursor.execute(sql)
+            result = cursor.fetchall()
+
+            IDs = [row[0] for row in result]
+            IPs = [row[1] for row in result]
+
+        for ID, IP in zip(IDs, IPs):
+            try:
+                GET = requests.get(IP, verify=False, timeout=2)
+                POST = requests.post(IP, verify=False, timeout=2)
+                responseType = []
+                if GET.status_code == 200:
+                    responseType.append(GET)
+                else:
+                    responseType.append(POST)
+
+                soup = BeautifulSoup(responseType[0].text, 'html.parser')
+                title = soup.title.string.strip() if soup.title else 'not title'
+                headings = soup.find_all(['h1', 'h2', 'h3', 'h4'])
+                content = [heading.get_text().strip() for heading in headings]
+                print(f"URL: {IP}")
+                print(f"title: {title}")
+                print(f"topic:{content}")
                 try:
-                    response = requests.get(url, verify=False, timeout=2)
-                    if response.status_code == 200: 
-                        soup = BeautifulSoup(response.text, 'html.parser')
-                        title = soup.title.string.strip() if soup.title else 'Kein Titel gefunden'
-                        headings = soup.find_all(['h1', 'h2', 'h3', 'h4'])
-                        headings_text = [heading.get_text().strip() for heading in headings]
-                        print(f"URL: {url}")
-                        print(f"Titel: {title}")
-                        print("Überschriften:")
-                        for heading in headings_text:
-                            print(heading)
-                        print()
+                    with db.cursor() as cursor:
+                        for KEY, CONTENT in zip(ID, content):
+                            print(f"ID: {KEY}")
+                            sql = "INSERT INTO content (content_key, content_data) VALUES (%s, %s)"
+                            cursor.execute(sql, (KEY, CONTENT))
+                    db.commit()
+                    print("Data inserted successfully. GET")
 
-
-                    else:
-                        response = requests.post(url, verify=False, timeout=2)
-                        if response.status_code == 200:
-                            soup = BeautifulSoup(response.text, 'html.parser')
-                            title = soup.title.string.strip() if soup.title else 'Kein Titel gefunden'
-                            headings = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'a'])
-                            headings_text = [heading.get_text().strip() for heading in headings]
-                            print(f"URL: {url}")
-                            print(f"Titel: {title}")
-                            print("Überschriften:")
-                            for heading in headings_text:
-                                print(heading)
-                            print()
-
-
-                except requests.exceptions.RequestException as e:
-                    print(f"URL {url} is not accessible.")
+                except Exception as e:
+                    print("Error:", str(e))
                     continue
-                except requests.exceptions.Timeout as e:
-                    print(f"Timeout occurred for URL {url}. Moving to the next IP.")
-                    continue
-                
-            
+            except requests.exceptions.Timeout as e:
+                print(f"Timeout occurred for URL {IP}. Moving to the next IP.")
+                continue
+            except requests.exceptions.RequestException as e:
+                print(f"URL {IP} is not accessible.")
+                continue
+        db.commit()
+
+    finally:
+        db.close()
+
+
+if __name__ == '__main__':
+    getWebsiteContent()
