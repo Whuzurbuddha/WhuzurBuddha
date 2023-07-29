@@ -30,7 +30,7 @@ def insert_data(addresses):
     db = pymysql.connect(
         host='127.0.0.1',
         user='alexander',
-        password='5776',
+        password='',
         db='crawling'
     )
 
