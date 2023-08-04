@@ -1,0 +1,5 @@
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+mysql = "24.0.0"
+lazy_static = "1.4"
+reqwest = "0.11"
