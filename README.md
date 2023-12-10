@@ -1,10 +1,3 @@
-# Hi 👋! My name is Alexander
-
-I'm just here to learn and hopefully to become developer one day
-
-
-
-
 ---
 
 <div align="center">
