@@ -5,8 +5,9 @@
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" height=50   width=62   alt="rust logo"     />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"         height="50" width="62" alt="linux logo"    />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"             height="50" width="62" alt="git logo"      />
- <img src="[devicon-cplusplus-line-wordmark colored](https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css)" height="50" width="62" alt="git logo"      />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"     height="50" width="62" alt="arduino logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" />
+  <=        
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"     height="50" width="62" alt="arduino logo"  />
 </div>
 
 ```
