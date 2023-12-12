@@ -6,7 +6,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"         height="50" width="62" alt="linux logo"    />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"             height="50" width="62" alt="git logo"      />
  <br>
-  <img align="center" src="https://s1.qwant.com/thumbr/0x380/2/4/271e2ffc35e59d8f091d4ed4573c30ea73da087eb620f55bcbf592697baa4a/1666364456Esp32_devkitc_v4.png?u=https%3A%2F%2Ffreesvg.org%2Fimg%2F1666364456Esp32_devkitc_v4.png&q=0&b=1&p=0&a=0"    height="85" width="80"   />
+  <img src="https://s1.qwant.com/thumbr/0x380/2/4/271e2ffc35e59d8f091d4ed4573c30ea73da087eb620f55bcbf592697baa4a/1666364456Esp32_devkitc_v4.png?u=https%3A%2F%2Ffreesvg.org%2Fimg%2F1666364456Esp32_devkitc_v4.png&q=0&b=1&p=0&a=0" height="85" width="80" />
   <=
             
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="50" width="62"/>
