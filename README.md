@@ -6,9 +6,9 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"         height="50" width="62" alt="linux logo"    />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"             height="50" width="62" alt="git logo"      />
  <br>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"    height="50" width="62"   />
+  <img src="https://s1.qwant.com/thumbr/0x380/2/4/271e2ffc35e59d8f091d4ed4573c30ea73da087eb620f55bcbf592697baa4a/1666364456Esp32_devkitc_v4.png"    height="50" width="62"   />
   <=
-   
+            
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="50" width="62"/>
 <br>
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" height="50" width="62" />
