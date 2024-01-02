@@ -36,6 +36,6 @@ fn hexademical(mut num: i32) -> String{
             }
         }
     }
-    let out =  hex.join("");
+    let out =  hex.join(" ");
     return out;
 }
