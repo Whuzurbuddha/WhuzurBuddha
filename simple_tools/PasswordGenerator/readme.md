@@ -1,2 +1,2 @@
 
-<img src="https://github.com/Whuzurbuddha/WhuzurBuddha/blob/main/simple_tools/PasswordGenerator/preview.png?raw=true" height="400" width="200" />
+<img src="https://github.com/Whuzurbuddha/WhuzurBuddha/blob/main/simple_tools/PasswordGenerator/preview.png?raw=true" height="400" width="300" />
