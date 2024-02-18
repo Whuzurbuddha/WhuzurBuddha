@@ -1,0 +1,46 @@
+﻿<Window x:Class="PasswordGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="Password Generator" Height="350" Width="300" ResizeMode="NoResize" Background="WhiteSmoke" Icon="it">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <DockPanel Margin="0,10,0,0">
+                            <fa:ImageAwesome Icon="Info" Width="15" Height="15">
+                                <fa:ImageAwesome.ToolTip>
+                                    <ToolTip>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Das Passwort wird automatisch" Margin="5"/>
+                                            <TextBlock Text="in den Zwischenspeicher kopiert" Grid.Row="1" Margin="5"/>
+                                        </Grid>
+                                    </ToolTip>
+                                </fa:ImageAwesome.ToolTip>
+                            </fa:ImageAwesome>
+    
+                            <TextBlock Text="Password Generator" TextAlignment="Center"></TextBlock>
+                        </DockPanel>
+                        <StackPanel Margin="0,65,0,0" HorizontalAlignment="Center">
+                            <TextBlock TextAlignment="Center" x:Name="NewPassword"></TextBlock>
+                            <Button Margin="0,10,0,15" 
+                                    Width="100"
+                                    Click="GeneratePassword">New Password</Button>
+                                <Label>Password Length</Label>
+                            <DockPanel>
+                                <TextBlock Text="{Binding ElementName=Slider, Path=Value, StringFormat={}{0:F0}}" 
+                                           VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,10,5,0"/>
+                                <Slider x:Name="Slider" Margin="5,0,0,0" Minimum="12" Maximum="30"></Slider>
+                            </DockPanel>
+                            <TextBlock Width="220" TextWrapping="Wrap" Text="Password was copied automatically" 
+                                       TextAlignment="Center"
+                                       Margin="0,10,0,10" x:Name="Info" Visibility="Hidden"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+    </Grid>
+</Window>
