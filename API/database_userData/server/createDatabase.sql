@@ -1,5 +1,0 @@
-CREATE TABLE user_data(
-  ID int AUTO_INCREMENT UNIQUE PRIMARY KEY,
-  username TEXT UNIQUE,
-  passwd TEXT
-  );
